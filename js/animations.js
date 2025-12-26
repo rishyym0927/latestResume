@@ -44,6 +44,9 @@ function initAnimations() {
   window.CarouselModule?.initManifestoCarousel();
   // Note: Testimonial carousel removed - section redesigned to timeline
 
+  // UI Enhancements
+  window.EnhancementsModule?.initEnhancements();
+
   // Performance & accessibility
   window.PerformanceModule?.handlePageVisibility();
   window.PerformanceModule?.handleWindowResize();

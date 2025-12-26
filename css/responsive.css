@@ -21,6 +21,10 @@
     justify-content: flex-start;
     margin-top: 20px;
   }
+
+  .position-item {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -36,10 +40,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .awards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -47,6 +47,28 @@
 
   .footer-right {
     align-items: center;
+  }
+
+  .footer::before {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .position-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-row {
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+  }
+
+  .skill-items {
+    grid-column: span 2;
+    margin-top: 15px;
   }
 }
 
@@ -75,10 +97,6 @@
   }
 
   .nav-links {
-    gap: 20px;
-  }
-
-  .nav-link:not(.nav-contact) {
     display: none;
   }
 
@@ -126,8 +144,67 @@
     gap: 16px;
   }
 
-  .awards-grid {
+  /* Skills Section Mobile */
+  .skill-row {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 25px 0;
+  }
+
+  .skill-number {
+    display: none;
+  }
+
+  .skill-name {
+    font-size: 1.1rem;
+  }
+
+  .skill-items {
+    grid-column: 1;
+    margin-top: 10px;
+  }
+
+  .skill-items span {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  /* Positions Section Mobile */
+  .position-item {
+    padding: 30px 0;
+  }
+
+  .position-org {
+    font-size: 1.2rem;
+  }
+
+  .position-right p {
+    font-size: 0.95rem;
+  }
+
+  /* Awards Section Mobile - Horizontal Scroll */
+  .awards-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .award-row {
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .award-detail {
+    display: none;
+  }
+
+  .award-title {
+    font-size: 1.1rem;
+  }
+
+  .award-arrow {
+    width: 40px;
+    height: 40px;
   }
 
   .contact-links {
@@ -144,13 +221,9 @@
     justify-content: center;
   }
 
-  .skills-section .section-header,
-  .skills-subtitle {
-    padding: 0 24px;
-  }
-
-  .testimonial-card {
-    padding: 50px 30px;
+  .footer::before {
+    left: 24px;
+    right: 24px;
   }
 }
 
@@ -178,5 +251,18 @@
 
   .contact-section {
     padding: 100px 24px;
+  }
+
+  .contact-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .position-highlights {
+    gap: 8px;
+  }
+
+  .position-highlights span {
+    font-size: 0.65rem;
+    padding: 4px 10px;
   }
 }

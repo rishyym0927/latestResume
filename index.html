@@ -3,41 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rishiraj Mukherjee - Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Rishiraj Mukherjee | Full-Stack Developer & Competitive Programmer</title>
+    <meta name="title" content="Rishiraj Mukherjee | Full-Stack Developer & Competitive Programmer" />
     <meta
       name="description"
-      content="Rishiraj Mukherjee is a full-stack developer & competitive programmer with expertise in React, Next.js, Go, and TypeScript."
+      content="Full-stack developer specializing in React, Next.js, Go, and TypeScript. IIIT Lucknow student with 1000+ DSA problems solved. Open source contributor to OWASP."
     />
+    <meta name="keywords" content="Rishiraj Mukherjee, Full Stack Developer, React Developer, Next.js, Go Developer, Competitive Programming, IIIT Lucknow, Web Developer, Portfolio" />
+    <meta name="author" content="Rishiraj Mukherjee" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rishyym0927.github.io/latestResume/" />
+    <meta property="og:title" content="Rishiraj Mukherjee | Full-Stack Developer" />
+    <meta property="og:description" content="Full-stack developer specializing in React, Next.js, Go, and TypeScript. Building digital experiences that stand out." />
+    <meta property="og:image" content="https://rishyym0927.github.io/latestResume/images/og-image.jpg" />
 
-    <!-- Google Fonts -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://rishyym0927.github.io/latestResume/" />
+    <meta property="twitter:title" content="Rishiraj Mukherjee | Full-Stack Developer" />
+    <meta property="twitter:description" content="Full-stack developer specializing in React, Next.js, Go, and TypeScript." />
+    <meta property="twitter:image" content="https://rishyym0927.github.io/latestResume/images/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+    
+    <!-- Google Fonts with display swap for better performance -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
       rel="stylesheet"
     />
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <!-- GSAP (defer non-critical) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" defer></script>
 
     <!-- Lenis Smooth Scroll -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
     <!-- Splitting.js for text animations -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/splitting/dist/splitting.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/splitting/dist/splitting-cells.css"
-    />
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js" defer></script>
 
-    <!-- Main Styles (imports all CSS modules) -->
+    <!-- Main Styles -->
     <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/decidrai.webp" type="image/webp" />
   </head>
   <body>
     <!-- Custom Cursor -->
@@ -55,6 +83,12 @@
     <!-- Blue Glow Border Effect -->
     <div class="glow-border"></div>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Noise Texture Overlay (premium feel) -->
+    <div class="noise-overlay"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="nav-logo">
@@ -65,7 +99,21 @@
         <a href="#projects" class="nav-link" data-hover="Works">Works</a>
         <a href="#contact" class="nav-link nav-contact">Contact</a>
       </div>
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#projects">Works</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content" id="smooth-content">
@@ -775,6 +823,13 @@
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
     <!-- JavaScript Modules -->
     <!-- Utilities (load first) -->
     <script src="js/utils/helpers.js"></script>
@@ -798,6 +853,7 @@
     <script src="js/components/magnetic.js"></script>
     <script src="js/components/carousel.js"></script>
     <script src="js/components/interactions.js"></script>
+    <script src="js/components/enhancements.js"></script>
 
     <!-- Main entry points -->
     <script src="js/animations.js"></script>

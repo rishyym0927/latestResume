@@ -25,5 +25,8 @@
 @import url("./css/contact.css");
 @import url("./css/footer.css");
 
+/* Enhancements (scroll progress, back to top, etc.) */
+@import url("./css/enhancements.css");
+
 /* Responsive */
 @import url("./css/responsive.css");
