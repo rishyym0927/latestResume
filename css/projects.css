@@ -55,6 +55,22 @@
   aspect-ratio: 21 / 10;
 }
 
+/* Actual Project Images */
+.project-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.project-large .project-img {
+  aspect-ratio: 21 / 10;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
 .project-overlay {
   position: absolute;
   inset: 0;
