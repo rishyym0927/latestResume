@@ -1,0 +1,62 @@
+/* ================================================
+   AWARDS / RECOGNITION SECTION STYLES
+   ================================================ */
+
+.awards-section {
+  padding: var(--section-padding);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.award-card {
+  padding: 50px 40px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.award-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.award-icon {
+  font-size: 3rem;
+}
+
+.award-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.award-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-blue);
+  margin-top: auto;
+}
+
+.award-link .arrow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.award-card:hover .award-link .arrow-icon {
+  transform: translateX(5px);
+}

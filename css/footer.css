@@ -1,0 +1,75 @@
+/* ================================================
+   FOOTER STYLES
+   ================================================ */
+
+.footer {
+  padding: 60px 80px;
+  background: var(--bg-secondary);
+}
+
+.footer-content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-name {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.footer-location,
+.footer-copyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-center a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.footer-center a:hover {
+  color: var(--text-primary);
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-end;
+}
+
+.footer-nav,
+.footer-social {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-nav a,
+.footer-social a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+  color: var(--text-primary);
+}

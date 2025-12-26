@@ -1,0 +1,78 @@
+/* ================================================
+   EXPERIENCE SECTION STYLES
+   ================================================ */
+
+.experience-section {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+}
+
+.experience-section .section-header,
+.experience-section .experience-content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.experience-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 60px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-logo {
+  position: relative;
+}
+
+.experience-logo span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+}
+
+.experience-details h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.experience-stack {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.experience-details ul {
+  padding-left: 0;
+}
+
+.experience-details li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.8;
+}
+
+.experience-details li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+}

@@ -1,0 +1,29 @@
+/* ================================================
+   MAIN STYLES - Imports all CSS modules
+   ================================================ */
+
+/* Base styles and variables */
+@import url("./css/base.css");
+
+/* Components */
+@import url("./css/cursor.css");
+@import url("./css/loader.css");
+@import url("./css/glow.css");
+@import url("./css/navbar.css");
+
+/* Sections */
+@import url("./css/sections.css");
+@import url("./css/hero.css");
+@import url("./css/story.css");
+@import url("./css/expertise.css");
+@import url("./css/experience.css");
+@import url("./css/projects.css");
+@import url("./css/achievements.css");
+@import url("./css/skills.css");
+@import url("./css/testimonials.css");
+@import url("./css/awards.css");
+@import url("./css/contact.css");
+@import url("./css/footer.css");
+
+/* Responsive */
+@import url("./css/responsive.css");
