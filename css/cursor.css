@@ -1,5 +1,6 @@
 /* ================================================
-   CUSTOM CURSOR STYLES
+   CUSTOM CURSOR STYLES - Le-Silk Enhanced
+   Features: Contextual states, view text, blend modes
    ================================================ */
 
 .cursor {
@@ -11,7 +12,9 @@
   pointer-events: none;
   z-index: 10000;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, background 0.3s;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease,
+    opacity 0.3s ease;
   mix-blend-mode: difference;
 }
 
@@ -19,25 +22,107 @@
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--text-primary);
+  border: 1px solid rgba(10, 10, 10, 0.3);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border 0.3s;
-  opacity: 0.5;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease,
+    border 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cursor.hover {
+/* Cursor text for contextual states */
+.cursor-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Hidden state */
+.cursor.cursor-hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* Link hover state */
+.cursor.cursor-link {
+  width: 4px;
+  height: 4px;
+}
+
+.cursor-follower.cursor-link {
+  width: 50px;
+  height: 50px;
+  border-color: var(--text-primary);
+}
+
+/* Project card - "View" state */
+.cursor-follower.cursor-project {
+  width: 100px;
+  height: 100px;
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  mix-blend-mode: difference;
+}
+
+.cursor-follower.cursor-project .cursor-text {
+  opacity: 1;
+  color: var(--white);
+}
+
+/* Award row - Arrow state */
+.cursor-follower.cursor-arrow {
   width: 60px;
   height: 60px;
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.cursor-follower.cursor-arrow .cursor-text {
+  opacity: 1;
+  font-size: 20px;
+  transform: rotate(-45deg);
+}
+
+/* Text mode - thin line */
+.cursor.cursor-text-mode {
+  width: 2px;
+  height: 20px;
+  border-radius: 1px;
+}
+
+.cursor-follower.cursor-text-mode {
+  opacity: 0;
+}
+
+/* Legacy hover states (fallback) */
+.cursor.hover {
+  width: 50px;
+  height: 50px;
   background: var(--accent-blue);
   mix-blend-mode: normal;
 }
 
 .cursor-follower.hover {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-color: var(--accent-blue);
   opacity: 0.3;
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
 }

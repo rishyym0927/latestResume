@@ -22,14 +22,16 @@
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
 
   /* Spacing */
-  --section-padding: 150px 80px;
+  --section-padding: 180px 80px;
   --container-max: 1400px;
 
-  /* Animation */
+  /* Animation - Le-Silk Inspired */
   --transition-fast: 0.2s ease;
-  --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-silk: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Reset & Base */

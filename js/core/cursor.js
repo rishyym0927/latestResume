@@ -1,15 +1,24 @@
 /* ================================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR - Le-Silk Enhanced
+   Features: Contextual states, "View" text on projects
    ================================================ */
 
 /**
- * Initialize custom cursor functionality
+ * Initialize enhanced custom cursor functionality
  */
 function initCursor() {
   const cursor = document.getElementById("cursor");
   const follower = document.getElementById("cursor-follower");
 
   if (!cursor || !follower) return;
+
+  // Create cursor text element for "View" state
+  let cursorText = follower.querySelector(".cursor-text");
+  if (!cursorText) {
+    cursorText = document.createElement("span");
+    cursorText.className = "cursor-text";
+    follower.appendChild(cursorText);
+  }
 
   let mouseX = 0,
     mouseY = 0;
@@ -23,32 +32,80 @@ function initCursor() {
     mouseY = e.clientY;
   });
 
-  // Smooth cursor animation
+  // Smooth cursor animation with Le-Silk style lerping
   gsap.ticker.add(() => {
     // Main cursor - fast
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
+    cursorX += (mouseX - cursorX) * 0.25;
+    cursorY += (mouseY - cursorY) * 0.25;
     gsap.set(cursor, { x: cursorX, y: cursorY });
 
-    // Follower - slow
-    followerX += (mouseX - followerX) * 0.08;
-    followerY += (mouseY - followerY) * 0.08;
+    // Follower - slower, smooth
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
     gsap.set(follower, { x: followerX, y: followerY });
   });
 
-  // Hover effects
-  const hoverElements = document.querySelectorAll(
-    "a, button, .project-card, .magnetic"
-  );
+  // Project cards - show "View" text
+  const projectCards = document.querySelectorAll(".project-card");
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      cursor.classList.add("cursor-hidden");
+      follower.classList.add("cursor-project");
+      cursorText.textContent = "View";
+    });
+    card.addEventListener("mouseleave", () => {
+      cursor.classList.remove("cursor-hidden");
+      follower.classList.remove("cursor-project");
+      cursorText.textContent = "";
+    });
+  });
 
-  hoverElements.forEach((el) => {
+  // Links and buttons - scale down
+  const linkElements = document.querySelectorAll(
+    "a:not(.project-link), button, .magnetic, .cta-link, .nav-link"
+  );
+  linkElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
-      cursor.classList.add("hover");
-      follower.classList.add("hover");
+      cursor.classList.add("cursor-link");
+      follower.classList.add("cursor-link");
     });
     el.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hover");
-      follower.classList.remove("hover");
+      cursor.classList.remove("cursor-link");
+      follower.classList.remove("cursor-link");
+    });
+  });
+
+  // Award rows - arrow cursor
+  const awardRows = document.querySelectorAll(".award-row");
+  awardRows.forEach((row) => {
+    row.addEventListener("mouseenter", () => {
+      cursor.classList.add("cursor-hidden");
+      follower.classList.add("cursor-arrow");
+      cursorText.textContent = "→";
+    });
+    row.addEventListener("mouseleave", () => {
+      cursor.classList.remove("cursor-hidden");
+      follower.classList.remove("cursor-arrow");
+      cursorText.textContent = "";
+    });
+  });
+
+  // Text/input elements - text cursor
+  const textElements = document.querySelectorAll("input, textarea, p, span");
+  textElements.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      if (
+        !el.closest("a") &&
+        !el.closest("button") &&
+        !el.closest(".project-card")
+      ) {
+        cursor.classList.add("cursor-text-mode");
+        follower.classList.add("cursor-text-mode");
+      }
+    });
+    el.addEventListener("mouseleave", () => {
+      cursor.classList.remove("cursor-text-mode");
+      follower.classList.remove("cursor-text-mode");
     });
   });
 

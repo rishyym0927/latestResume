@@ -55,21 +55,20 @@
   aspect-ratio: 21 / 10;
 }
 
-/* Actual Project Images */
+/* Actual Project Images - Parallax Ready */
 .project-img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 120%; /* Extra height for parallax movement */
   object-fit: cover;
-  transition: transform 0.8s var(--ease-out-expo);
+  will-change: transform;
+  transition: none; /* JS handles transitions for parallax */
 }
 
 .project-large .project-img {
-  aspect-ratio: 21 / 10;
+  height: 115%;
 }
 
-.project-card:hover .project-img {
-  transform: scale(1.05);
-}
+/* Hover handled by JS for smooth parallax */
 
 .project-overlay {
   position: absolute;

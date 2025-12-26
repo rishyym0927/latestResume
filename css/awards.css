@@ -1,5 +1,6 @@
 /* ================================================
-   AWARDS / RECOGNITION SECTION STYLES
+   RECOGNITION SECTION STYLES - Le-Silk Inspired
+   Minimal horizontal list with arrows
    ================================================ */
 
 .awards-section {
@@ -8,55 +9,118 @@
   margin: 0 auto;
 }
 
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.award-card {
-  padding: 50px 40px;
-  background: var(--white);
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.5s var(--ease-out-expo);
+/* Awards Container */
+.awards-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-.award-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-}
-
-.award-icon {
-  font-size: 3rem;
-}
-
-.award-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.award-link {
-  display: inline-flex;
+/* Individual Award Row */
+.award-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 40px;
   align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent-blue);
-  margin-top: auto;
+  padding: 30px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+  color: inherit;
 }
 
-.award-link .arrow-icon {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s var(--ease-out-expo);
+.award-row:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.award-card:hover .award-link .arrow-icon {
-  transform: translateX(5px);
+/* Animated Line Overlay */
+.award-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.award-row.in-view::before {
+  transform: scaleX(1);
+}
+
+/* Row Hover Effect */
+.award-row:hover {
+  transform: translateX(15px);
+}
+
+/* Award Title */
+.award-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Award Detail/Subtitle */
+.award-detail {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: opacity 0.4s ease;
+}
+
+/* Award Arrow */
+.award-arrow {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.award-row:hover .award-arrow {
+  background: var(--text-primary);
+  color: var(--white);
+  border-color: var(--text-primary);
+  transform: rotate(-45deg);
+}
+
+/* SVG Arrow Icon */
+.award-arrow .arrow-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.award-row:hover .arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .award-row {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  .award-detail {
+    display: none;
+  }
+
+  .award-title {
+    font-size: 1.2rem;
+  }
+
+  .award-arrow {
+    width: 40px;
+    height: 40px;
+  }
 }

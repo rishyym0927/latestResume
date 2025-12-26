@@ -34,10 +34,15 @@ function initAnimations() {
   window.ParallaxModule?.initParallaxEffects();
   window.ParallaxModule?.initScrollProgress();
 
+  // Project animations (Le-Silk style)
+  window.ProjectParallaxModule?.initProjectParallax();
+  window.ProjectParallaxModule?.initProjectHoverEffects();
+
   // Component modules
   window.MagneticModule?.initMagneticButtons();
+  window.MagneticModule?.initRowHoverEffects();
   window.CarouselModule?.initManifestoCarousel();
-  window.CarouselModule?.initTestimonialCarousel();
+  // Note: Testimonial carousel removed - section redesigned to timeline
 
   // Performance & accessibility
   window.PerformanceModule?.handlePageVisibility();
